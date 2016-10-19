@@ -55,7 +55,7 @@
 				case 'user':
 					if (!this.userTemplate) {
 						var template = this._userTemplate;
-						if (this.avatarsEnabled) {
+						if (this.avatarsEnabled && _.isUndefined(parameter.server)) {
 							template = this._userWithAvatarTemplate + template;
 						}
 						this.userTemplate = Handlebars.compile(template);
